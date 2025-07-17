@@ -1,6 +1,6 @@
 # Algorithm Training Package - Complete Interview Preparation
 
-This repository contains comprehensive training materials for mastering two fundamental algorithm categories that frequently appear in technical interviews.
+This repository contains comprehensive training materials for mastering three fundamental algorithm categories that frequently appear in *All three training packages are designed to be completed in 6-12 weeks depending on your pace and prior experience.*echnical interviews.
 
 ## 📦 Training Packages
 
@@ -30,11 +30,26 @@ Master shortest path algorithms with 10 progressive implementations:
 
 **Key Libraries**: `heapq`, `collections`, `enum`, `bisect`
 
+### 3. 🔗 [Linked List Training](./LINKED_LIST_TRAINING_README.md)
+
+**File**: `linked_list_training_tasks.py`
+
+Master linked list manipulation with 10 comprehensive problems:
+
+- **Easy**: Basic operations, cycle detection
+- **Medium**: Merging, duplicate removal, intersection
+- **Hard**: Reordering, rotation, palindrome checking
+- **Very Hard**: Deep copy, LRU cache implementation
+
+**Key Libraries**: `collections.deque`, `collections.OrderedDict`, `heapq`, `dataclasses`
+
+**Key Libraries**: `heapq`, `collections`, `enum`, `bisect`
+
 ## 🎯 Learning Approach
 
 ### Progressive Difficulty
 
-Both packages follow the same proven structure:
+All three packages follow the same proven structure:
 
 1. **Foundation Building** - Start with basic concepts
 2. **Skill Development** - Add complexity gradually
@@ -60,16 +75,19 @@ python interval_training_tasks.py
 
 # Run Dijkstra training
 python dijkstra_training_tasks.py
+
+# Run linked list training
+python linked_list_training_tasks.py
 ```
 
 ## 📊 Coverage Matrix
 
-| Difficulty    | Intervals                | Dijkstra               | Combined Skills           |
-| ------------- | ------------------------ | ---------------------- | ------------------------- |
-| **Easy**      | Merge, Insert            | Basic impl, Path recon | Sorting, Basic DS         |
-| **Medium**    | Scheduling, Intersection | Network, Flights       | Greedy, Constraints       |
-| **Hard**      | Trees, Overlaps          | 2D grids, MST          | Advanced DS, Optimization |
-| **Very Hard** | Calendar, Skyline        | Multi-state, Complex   | System design level       |
+| Difficulty    | Intervals                | Dijkstra               | Linked Lists      | Combined Skills         |
+| ------------- | ------------------------ | ---------------------- | ----------------- | ----------------------- |
+| **Easy**      | Merge, Insert            | Basic impl, Path recon | Reverse, Cycles   | Basic DS, Pointers      |
+| **Medium**    | Scheduling, Intersection | Network, Flights       | Merge, Duplicates | Greedy, Hash Maps       |
+| **Hard**      | Trees, Overlaps          | 2D grids, MST          | Reorder, Rotate   | Advanced DS, Algorithms |
+| **Very Hard** | Calendar, Skyline        | Multi-state, Complex   | Deep Copy, LRU    | System Design Level     |
 
 ## 🎓 Interview Readiness
 
@@ -84,16 +102,17 @@ python dijkstra_training_tasks.py
 
 - **Interval Problems**: Scheduling systems, calendar apps, resource allocation
 - **Dijkstra Problems**: Route planning, network optimization, game AI
+- **Linked List Problems**: Memory management, cache systems, data structure implementation
 
 ### Complexity Analysis
 
-Both packages include detailed time/space complexity analysis for each solution.
+All three packages include detailed time/space complexity analysis for each solution.
 
 ## 🔄 Study Schedule Recommendation
 
 ### Week 1-2: Foundations
 
-- Complete Easy problems from both packages
+- Complete Easy problems from all three packages
 - Focus on understanding core concepts
 - Practice basic implementations
 
@@ -131,6 +150,13 @@ Both packages include detailed time/space complexity analysis for each solution.
 - Learn early termination
 - Practice multi-state tracking
 
+### For Linked List Problems
+
+- Always check for null pointers
+- Master two-pointer technique
+- Use dummy nodes for edge cases
+- Practice in-place operations
+
 ### General Interview Tips
 
 - Start with brute force, then optimize
@@ -148,7 +174,7 @@ Both packages include detailed time/space complexity analysis for each solution.
 
 ## 📈 Success Metrics
 
-After completing both packages, you should be able to:
+After completing all three packages, you should be able to:
 
 - ✅ Implement basic algorithms from scratch
 - ✅ Recognize and adapt common patterns
