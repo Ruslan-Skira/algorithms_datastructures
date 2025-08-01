@@ -43,7 +43,7 @@ def task1_basic_merge_v1(intervals: List[List[int]]) -> List[List[int]]:
 
 def task1_basic_merge_v2(intervals: List[List[int]]) -> List[List[int]]:
     """
-    Using collections.deque for efficient append/pop operations
+    Using collections.deque for efficient append/pop operations just learn deque!
     """
     if not intervals:
         return []
@@ -58,7 +58,7 @@ def task1_basic_merge_v2(intervals: List[List[int]]) -> List[List[int]]:
         else:
             result.append(current)
 
-    return list(result)
+    return list(result)   # O(n) - EXTRA OVERHEAD!
 
 
 # =============================================================================

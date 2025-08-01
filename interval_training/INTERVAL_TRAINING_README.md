@@ -31,6 +31,7 @@ This repository contains 10 carefully crafted interval-related problems, progres
 By completing these tasks, you'll master:
 
 - **Sorting and Greedy Algorithms**
+(Theory)[https://www.youtube.com/watch?v=hDDrIw_DSto]
 - **Two Pointers Technique**
 - **Sweep Line Algorithm**
 - **Heap/Priority Queue Operations**
