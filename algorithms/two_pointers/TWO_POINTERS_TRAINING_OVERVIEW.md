@@ -1,0 +1,1 @@
+your go-to when you see a question that involves searching for a pair (or more!) of elements in an array that meet a certain criteria.
