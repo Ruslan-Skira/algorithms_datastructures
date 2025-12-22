@@ -27,4 +27,20 @@ l = [1, 3, 4, 6, 8, 10, 13]
 target = 13
 answer = s.two_sum(l, target)
 
-assert answer == [3, 110], f"{answer=},\n {target=}"
+assert answer == [3, 10], f"{answer=},\n {target=}"
+
+
+# V2 bed because O(n^2)
+class SolutionV2:
+    def two_sum(self, l: List, target: int) -> List:
+        for i in range(len(l)):
+            for j in range(i + 1, len(l)):
+                if l[i] + l[j] == target:
+                    return [l[i], l[j]]
+        return []
+
+
+s2 = SolutionV2()
+answer2 = s2.two_sum(l, target)
+print(f"{answer2=},\n{target=}")
+assert answer2 == [3, 10], f"{answer2=},\n {target=}"

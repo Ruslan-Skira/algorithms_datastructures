@@ -1,3 +1,88 @@
+# Lesson 1: Understanding the Problem
+What is Dijkstra's Algorithm?
+Dijkstra's algorithm finds the shortest path from a starting vertex to all other vertices in a weighted graph.
+
+Real-World Example:
+Think of it like GPS navigation - finding the shortest route from your home to every other location in your city.
+
+Your Graph:
+
+`
+graph = {
+    "U": {"V": 6, "W": 7},      # From U: to V costs 6, to W costs 7
+    "V": {"U": 6, "X": 10},     # From V: to U costs 6, to X costs 10
+    "W": {"U": 7, "X": 1},      # From W: to U costs 7, to X costs 1
+    "X": {"W": 1, "V": 10},     # From X: to W costs 1, to V costs 10
+}
+`
+Visual representation:
+
+```
+    U ----6---- V
+    |           |
+    7          10
+    |           |
+    W ----1---- X
+```
+# Lesson 2: Core Concepts
+Key Data Structures:
+*unvisited_min_distances*: Tracks the shortest known distance to each unvisited vertex
+*visited_vertices*: Stores vertices we've fully processed with their final shortest distances
+*current_vertex*: The vertex we're currently examining
+The Greedy Principle:
+Always choose the unvisited vertex with the smallest known distance. This ensures we find optimal paths.
+
+# Lesson 3: Step-by-Step Walkthrough
+Let's trace through your code with starting vertex "U":
+
+Initialization:
+```
+unvisited_min_distances = {"U": 0, "V": ∞, "W": ∞, "X": ∞}
+visited_vertices = {}
+current_vertex = "U"
+```
+## Iteration 1: Process vertex "U"
+Step 1: Pick unvisited vertex with smallest distance
+`
+current_vertex = "U", current_distance = 0
+`
+Step 2: Check all neighbors of "U"
+
+Neighbor "V": distance = 0 + 6 = 6
+6 < ∞, so update: unvisited_min_distances["V"] = 6
+Neighbor "W": distance = 0 + 7 = 7
+7 < ∞, so update: unvisited_min_distances["W"] = 7
+
+Step 3: Mark "U" as visited
+`visited_vertices = {"U": 0}
+unvisited_min_distances = {"V": 6, "W": 7, "X": ∞}`
+## Iteration 2: Process vertex "V"
+Step 1: Pick unvisited vertex with smallest distance
+`current_vertex = "V", current_distance = 6`
+Step 2: Check all neighbors of "V"
+
+Neighbor "U": Already visited, skip
+Neighbor "X": distance = 6 + 10 = 16
+16 < ∞, so update: unvisited_min_distances["X"] = 16
+Step 3: Mark "V" as visited
+
+`visited_vertices = {"U": 0, "V": 6}
+unvisited_min_distances = {"W": 7, "X": 16}`
+
+Iteration 3: Process vertex "W"
+Step 1: Pick unvisited vertex with smallest distance
+`current_vertex = "W", current_distance = 7`
+Step 2: Check all neighbors of "W"
+
+Neighbor "U": Already visited, skip
+Neighbor "X": distance = 7 + 1 = 8
+8 < 16, so update: unvisited_min_distances["X"] = 8 ✨ Better path found!
+Step 3: Mark "W" as visited
+
+`visited_vertices = {"U": 0, "V": 6, "W": 7}
+unvisited_min_distances = {"X": 8}`
+\\
+
 # Dijkstra's Algorithm Training Tasks - Interview Preparation
 
 This repository contains 10 carefully crafted Dijkstra's algorithm problems, progressing from **Easy** to **Very Hard** difficulty levels. Each problem includes multiple solution approaches using different optimization techniques and data structures.

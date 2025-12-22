@@ -1,0 +1,5 @@
+1. Openai api standart. LLM supports it. pip install openai support
+
+
+create adapter for openai standart. Back and forth for rqsponse  request
+Amazon badrock.
