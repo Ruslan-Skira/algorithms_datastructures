@@ -16,9 +16,6 @@ Input: [1, 2, 0]
 Output: 3
 """
 
-
-
-
 """What this REALLY is:
 The optimal solution uses hash set or cyclic sort, not greedy or two-pointers:
 
@@ -28,3 +25,31 @@ Time: O(n), Space: O(n)
 Cyclic Sort approach (optimal): Place each number in its "correct" position (e.g., 1 at index 0, 2 at index 1), then find the first missing
 
 Time: O(n), Space: O(1)"""
+
+
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+
+def solution(A):
+    """
+      Example test:   [1, 3, 6, 4, 1, 2]
+    OK
+
+    Example test:   [1, 2, 3]
+    OK
+
+    Example test:   [-1, -3]
+    """
+    # Implement your solution here
+    A.sort()
+    array_int = list(set(A))
+    if not list(filter(lambda a: a > 0, array_int)):
+        return 1
+    current = array_int[0]
+    for i in range(len(array_int)):
+        if array_int[i] != current:
+            return array_int[i - 1] + 1
+        else:
+            current += 1
+    return current
