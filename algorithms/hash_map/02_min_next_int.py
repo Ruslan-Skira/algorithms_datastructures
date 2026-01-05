@@ -53,3 +53,67 @@ def solution(A):
         else:
             current += 1
     return current
+
+def smallest_missing_positive_integer(nums):
+    """
+    Hash Set
+    Convert the list to a set for o(1) lookups.
+    Start checking from 1 upwards to find the smallest missing positive integer.
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+    """
+    num_set = set(nums)
+    smallest_missing = 1
+
+    while smallest_missing in num_set:
+        smallest_missing += 1
+
+    return smallest_missing
+
+assert smallest_missing_positive_integer([3, 4, -1, 1]) == 2
+assert smallest_missing_positive_integer([1, 2, 0]) == 3
+assert smallest_missing_positive_integer([1, 3, 6, 4, 1, 2]) == 5
+assert smallest_missing_positive_integer([1, 2, 3]) == 4
+assert smallest_missing_positive_integer([-1, -3]) == 1
+assert smallest_missing_positive_integer([]) == 1
+assert smallest_missing_positive_integer([-5, -2, -1]) == 1
+# V2
+
+def cyclic_sort(nums): # TODO: not working properly need to understand how it works.
+    """
+    Cyclic Sort
+
+    """
+    n = len(nums)
+    for i in range(n):
+        while 1 <= nums[i] <= n and nums[nums[i] - 1] != nums[i]:
+            correct_i = nums[i] - 1
+            nums[i], nums[correct_i] = nums[correct_i], nums[i]
+    return nums
+
+print(cyclic_sort([3, 4, -1, 1]))  # Expected: [1, -1, 3, 4]
+print(cyclic_sort([1, 2, 0]))      # Expected: [1, 2, 0]
+print(cyclic_sort([1, 3, 6, 4, 1, 2]))  # Expected: [1, 1, 2, 3, 4, 6]
+assert cyclic_sort([3, 1, 5, 4, 2]) == [1, 2, 3, 4, 5]
+
+
+
+def cyclic_sort_smallest_int(nums):
+    """
+    Cyclic Sort
+    Place each number in its correct position (1 at index 0, 2 at index 1, etc.).
+    Then find the first index where the number is not correct.
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    n = len(nums)
+    for i in range(n):
+        while 1 <= nums[i] <= n and nums[nums[i] - 1] != nums[i]:
+            correct_index = nums[i] - 1
+            nums[i], nums[correct_index] = nums[correct_index], nums[i]
+
+    for i in range(n):
+        if nums[i] != i + 1:
+            return i + 1
+
+    return n + 1
